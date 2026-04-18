@@ -32,7 +32,7 @@ public class Pracownik {
         }
 
         public double obliczKosztMiesieczny() {
-            return this.stawkaBazowa;
+            return getStawkaBazowa();
         }
 
         public String przedstawSie() {
