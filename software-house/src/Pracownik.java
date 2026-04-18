@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Pracownik {
         private String idPracownika;
         private String imie;
@@ -40,12 +42,24 @@ public class Pracownik {
         @Override
         public String toString() {
             return "Pracownik{" +
-                    "idPracownika='" + idPracownika + '\'' +
-                    ", imie='" + imie + '\'' +
-                    ", nazwisko='" + nazwisko + '\'' +
-                    ", stawkaBazowa=" + stawkaBazowa +
+                    "idPracownika='" + pobierzIdPracownika() + '\'' +
+                    ", imie='" + getImie() + '\'' +
+                    ", nazwisko='" + getNazwisko() + '\'' +
+                    ", stawkaBazowa=" + getStawkaBazowa() +
                     '}';
         }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Pracownik pracownik = (Pracownik) o;
+        return Objects.equals(idPracownika, pracownik.idPracownika);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(idPracownika);
+    }
+}
 
 
