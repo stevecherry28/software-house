@@ -18,7 +18,7 @@ public class ZespolProjektowy {
     }
 
     public void dodajPracownika(Pracownik pracownik) {
-        this.pracownicy.add(pracownik);
+        getPracownicy().add(pracownik);
     }
 
     public void wypiszSkladZespolu() {
